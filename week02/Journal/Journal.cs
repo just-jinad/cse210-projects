@@ -26,7 +26,7 @@ public class Journal
         _entries.Add(entry);
     }
 
-     public void SaveToFile(string filename)
+    public void SaveToFile(string filename)
     {
         string json = JsonSerializer.Serialize(_entries, _jsonOptions);
         File.WriteAllText(filename, json);

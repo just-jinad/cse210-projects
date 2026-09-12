@@ -1,3 +1,5 @@
+// Enhancement: JSON storage makes saved journals structured, readable, and easier to extend.
+
 using System;
 using System.IO;
 
@@ -73,19 +75,15 @@ public class Program
 
         Console.WriteLine(prompt);
         string response = Console.ReadLine();
-        string DateNow = DateTime.Now.ToShortDateString();
+        string dateNow = DateTime.Now.ToShortDateString();
 
         Entry entry = new Entry
         {
-            _date = DateNow,
+            _date = dateNow,
             _prompt = prompt,
             _response = response
         };
 
         _journal.AddEntry(entry);
     }
-
-   
-
-   
 }
