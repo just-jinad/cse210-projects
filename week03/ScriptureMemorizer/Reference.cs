@@ -1,3 +1,5 @@
+using System;
+
 public class Reference
 {
     private string _book;
@@ -12,12 +14,22 @@ public class Reference
         _verse = verse;
     }
 
-    // Reference("proverbs", 3, 5, 6) => "Proverbs 3:5-6"
-
     public Reference(string book, int chapter, int verse, int endVerse) : this(book, chapter, verse)
     {
         _endVerse = endVerse;
     }
 
-    public string GetDisplayText() { return ""; }
+    public string GetDisplayText() 
+    { 
+        
+        if (_endVerse > 0)
+        {
+            return $"{_book} {_chapter}:{_verse}-{_endVerse}";
+        }
+        else
+        {
+            return $"{_book} {_chapter}:{_verse}";
+        }    
+        
+    }
 }
