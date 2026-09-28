@@ -7,9 +7,9 @@ public class Video
 
     public Video(string title, string author, int length)
     {
-        this._title = title;
-        this._author = author;
-        this._length = length;
+        _title = title;
+        _author = author;
+        _length = length;
     }
 
     public string GetTitle()

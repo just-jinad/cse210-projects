@@ -5,8 +5,8 @@ public class Comment
 
     public Comment(string name, string text)
     {
-        this._name = name;
-        this._text = text;
+        _name = name;
+        _text = text;
     }
 
     public string GetName()
