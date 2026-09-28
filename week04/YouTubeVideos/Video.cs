@@ -1,45 +1,45 @@
 public class Video
 {
-    private string title;
-    private string author;
-    private int length; 
-    private List<Comment> comments = new List<Comment>();
+    private string _title;
+    private string _author;
+    private int _length; 
+    private List<Comment> _comments = new List<Comment>();
 
     public Video(string title, string author, int length)
     {
-        this.title = title;
-        this.author = author;
-        this.length = length;
+        this._title = title;
+        this._author = author;
+        this._length = length;
     }
 
     public string GetTitle()
     {
-        return title;
+        return _title;
     }
 
     public string GetAuthor()
     {
-        return author;
+        return _author;
     }
 
     public int GetLength()
     {
-        return length;
+        return _length;
     }
 
     public void AddComment(string name, string text)
     {
         Comment comment = new Comment(name, text);
-        comments.Add(comment);
+        _comments.Add(comment);
     }
 
     public int GetCommentCount()
     {
-        return comments.Count;
+        return _comments.Count;
     }
 
     public IReadOnlyList<Comment> GetComments()
     {
-        return comments; 
+        return _comments; 
     }
 }
