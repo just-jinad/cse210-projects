@@ -7,6 +7,7 @@ class Program
         Address address1 = new Address("123 Main St", "Anytown", "CA", "USA");
         Customer customer1 = new Customer("John Doe", address1);
 
+        
         Product product1 = new Product("Widget", 1, 10.99m, 2);
         Product product2 = new Product("Gadget", 2, 5.49m, 3);
 
