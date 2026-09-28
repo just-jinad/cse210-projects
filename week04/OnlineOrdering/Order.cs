@@ -1,30 +1,30 @@
 public class Order
 {
-    private List<Product> products;
-    private Customer customer;
+    private List<Product> _products;
+    private Customer _customer;
 
     public Order(List<Product> products, Customer customer)
     {
-        this.products = products;
-        this.customer = customer;
+        _products = products;
+        _customer = customer;
     }
 
-    public double TotalCostOfOrder()
+    public decimal TotalCostOfOrder()
     {
-        double total = 0;
-        foreach (Product product in products)
+        decimal total = 0;
+        foreach (Product product in _products)
         {
             total += product.GetTotalCost();
         }
 
-        total += customer.IsInUSA() ? 5 : 35;
+        total += _customer.IsInUSA() ? 5 : 35;
         return total;
     }
 
     public string PackingLabel()
     {
         string label = "";
-        foreach (Product product in products)
+        foreach (Product product in _products)
         {
             label += $"{product.GetName()} (ID: {product.GetProductId()})\n";
         }
@@ -33,6 +33,6 @@ public class Order
 
     public string ShippingLabel()
     {
-        return $"{customer.GetName()}\n{customer.GetAddress().AddressDisplay()}";
+        return $"{_customer.GetName()}\n{_customer.GetAddress().AddressDisplay()}";
     }
 }
