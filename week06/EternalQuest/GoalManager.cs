@@ -16,21 +16,39 @@ public class GoalManager
         {
             Console.WriteLine();
             DisplayPlayerInfo();
-            Console.WriteLine("\nMenu:");
+            Console.WriteLine("\nMenu Options:");
             Console.WriteLine("  1. Create new goal");
             Console.WriteLine("  2. List goals");
             Console.WriteLine("  3. Save goals");
             Console.WriteLine("  4. Load goals");
             Console.WriteLine("  5. Record event");
             Console.WriteLine("  6. Quit");
-            choice = ReadText("Select a choice: ");
+            choice = ReadText("Select a choice from the menu: ").Trim();
 
-            if (choice == "1") CreateGoal();
-            else if (choice == "2") ListGoalDetails();
-            else if (choice == "3") SaveGoals();
-            else if (choice == "4") LoadGoals();
-            else if (choice == "5") RecordEvent();
-            else if (choice != "6") Console.WriteLine("Invalid choice.");
+            switch (choice)
+            {
+                case "1":
+                    CreateGoal();
+                    break;
+                case "2":
+                    // Listing is read-only; it must not change the goal collection.
+                    ListGoalDetails();
+                    break;
+                case "3":
+                    SaveGoals();
+                    break;
+                case "4":
+                    LoadGoals();
+                    break;
+                case "5":
+                    RecordEvent();
+                    break;
+                case "6":
+                    break;
+                default:
+                    Console.WriteLine("Invalid choice.");
+                    break;
+            }
         }
     }
 
@@ -63,7 +81,7 @@ public class GoalManager
         Console.WriteLine("  2. Eternal goal");
         Console.WriteLine("  3. Checklist goal");
         Console.WriteLine("  4. Streak goal (daily habit)");
-        string type = ReadText("Which type? ");
+        string type = ReadText("Which type of goal would you like to create? ");
 
         if (type != "1" && type != "2" && type != "3" && type != "4")
         {
