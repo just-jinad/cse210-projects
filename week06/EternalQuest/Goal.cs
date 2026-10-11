@@ -1,11 +1,12 @@
 namespace EternalQuest;
+
 public abstract class Goal
 {
-    protected string _shortName;
-    protected string _description;
-    protected int _points; 
+    private string _shortName;
+    private string _description;
+    private int _points;
 
-    protected Goal(string name, string description, int points)
+    public Goal(string name, string description, int points)
     {
         _shortName = name;
         _description = description;
@@ -13,14 +14,18 @@ public abstract class Goal
     }
 
     public string ShortName => _shortName;
+    protected string Description => _description;
+    protected int Points => _points;
 
-    public int Points => _points;
-
-    public abstract void RecordEvent();
+    // Records one event and returns the points earned.
+    public abstract int RecordEvent();
     public abstract bool IsComplete();
-
-    public virtual string GetDetailsString()
-        => $"[{(IsComplete() ? "X" : " ")}] {_shortName} ({_description})";
-
     public abstract string GetStringRepresentation();
+
+    // Default display; only ChecklistGoal needs to change it.
+    public virtual string GetDetailsString()
+    {
+        string box = IsComplete() ? "[X]" : "[ ]";
+        return $"{box} {_shortName} ({_description})";
+    }
 }

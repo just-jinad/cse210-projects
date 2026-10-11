@@ -7,12 +7,10 @@ public class EternalGoal : Goal
     {
     }
 
-    
-    public override void RecordEvent() { }
+    public override int RecordEvent() => Points; // never completes, always pays
 
-    // Never completes by design.
     public override bool IsComplete() => false;
 
     public override string GetStringRepresentation()
-        => $"{nameof(EternalGoal)}|{_shortName}|{_description}|{_points}";
+        => $"EternalGoal|{ShortName}|{Description}|{Points}";
 }
