@@ -7,7 +7,7 @@ public class EternalGoal : Goal
     {
     }
 
-    // Nothing to track: every event just earns points.
+    
     public override void RecordEvent() { }
 
     // Never completes by design.

@@ -13,7 +13,6 @@ public class GoalManager
 
     public void Start()
     {
-        // TODO: menu loop -> Display player info, list, create, save, load, record, quit.
         throw new NotImplementedException();
     }
 
@@ -40,26 +39,22 @@ public class GoalManager
 
     public void CreateGoal()
     {
-        // TODO: prompt for type + fields, validate ints with int.TryParse, add to _goals.
         throw new NotImplementedException();
     }
 
     public void RecordEvent()
     {
-        // TODO: pick goal, call RecordEvent(), add Points to _score.
-        // Checklist: also add Bonus when the event flips IsComplete() false -> true.
+ 
         throw new NotImplementedException();
     }
 
     public void SaveGoals()
     {
-        // TODO: line 1 = _score, then one GetStringRepresentation() per goal.
         throw new NotImplementedException();
     }
 
     public void LoadGoals()
     {
-        // TODO: read file, parse score, split on '|', switch on type tag to rebuild goals.
         throw new NotImplementedException();
     }
 }

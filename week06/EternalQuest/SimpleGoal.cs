@@ -10,7 +10,7 @@ public class SimpleGoal : Goal
         _isComplete = false;
     }
 
-    // Overload for rehydrating from a save file.
+   
     public SimpleGoal(string name, string description, int points, bool isComplete)
         : this(name, description, points)
     {
